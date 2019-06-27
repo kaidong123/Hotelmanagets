@@ -20,15 +20,43 @@
                     },
                     success: function (data) {
                         console.log(data);
-                        // var html = "";
-                        // for (var i = 1; i <= data.length; i++) {
-                        //     html += "<tr>";
-                        //     html += "<td>" + data[i].uname + "</td>";
-                        //     html += "<td>" + data[i].uname + "</td>";
-                        //     html += "<td>" + data[i].upwd + "</td>";
-                        //     html += "<td>" + data[i].uemail + "</td>";
-                        //     html += "</tr>";
-                        // }
+                        if (data.length < 3){
+                            var html = "";
+                            // for (var i = 0; i < data.length; i++) {
+                                html += "<tr class='tr2'>";
+                                html += "<td>" + 1 + "</td>";
+                                html += "<td>" + data[0].customerName + "</td>";
+                                html += "<td>" + data[0].nativeplace + "</td>";
+                                html += "<td>" + data[0].idcardtype + "</td>";
+                                html += "<td>" + data[0].idcard + "</td>";
+                                html += "<td>" + data[0].address + "</td>";
+                                html += "<td>" + data[0].phone + "</td>";
+                                html += "<td>" + data[1].beginDate+'-'+data[1].endDate + "</td>";
+                                html += "</tr>";
+                            // }
+                            $('#content').html(html);
+                            $('#number').html(1);
+                        }
+                        else {
+                            var html = "";
+                            var count = 0;
+                            for(var i = 0;i <data.length;){
+                                count = count +1;
+                                html += "<tr class='tr2'>";
+                                html += "<td>" + count + "</td>";
+                                html += "<td>" + data[i].customerName + "</td>";
+                                html += "<td>" + data[i].nativeplace + "</td>";
+                                html += "<td>" + data[i].idcardtype + "</td>";
+                                html += "<td>" + data[i].idcard + "</td>";
+                                html += "<td>" + data[i].address + "</td>";
+                                html += "<td>" + data[i].phone + "</td>";
+                                html += "<td>" + data[i+1].beginDate+'-'+data[i+1].endDate + "</td>";
+                                html += "</tr>";
+                                i = i+2;
+                            $('#content').html(html);
+                            }
+                            $('#number').html(count);
+                        }
                     }
                 });
             });
@@ -54,7 +82,7 @@
                 姓&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="uname" id="user">
                 证件号：<input type='text' name='numberID' id="card">
                 手机号：<input type="tel" name="utel" id="phone">
-                <button type="submit" id="search_select">搜索</button>
+                <button type="button" id="search_select">搜索</button>
             </td>
         </tr>
     </form>
@@ -78,16 +106,18 @@
                 <th>手机号码</th>
                 <th>起止时间</th>
             </tr>
-            <!--<tr class="tr3">-->
-            <!--<td></td>-->
-            <!--<td></td>-->
-            <!--<td></td>-->
-            <!--<td></td>-->
-            <!--<td></td>-->
-            <!--<td></td>-->
-            <!--<td></td>-->
-            <!--<td>共计number条</td>-->
-            <!--</tr>-->
+            <tbody id="content">
+            </tbody>
+            <tr class="tr3">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>共计<span id="number">0</span>条</td>
+            </tr>
         </table>
     </div>
 </div>
