@@ -114,3 +114,21 @@ class Order_information(db.Model):
     fwName = db.Column(db.String(30), nullable=True)
     assure = db.Column(db.String(30), nullable=True)
     comment = db.Column(db.String(100), nullable=True)
+
+
+class Room_price(db.Model):
+    __tablename__ = "room_price"
+    id = db.Column(db.Integer, nullable=False,primary_key=True)
+    roomtype = db.Column(db.String(20), nullable=True)
+    dayrent = db.Column(db.String(20), nullable=True)
+    monthrent = db.Column(db.String(20), nullable=True)
+    timeout = db.Column(db.String(20), nullable=True)
+
+
+
+class Roomtype_info(db.Model):
+    __tablename__ = "roomtype_info"
+    id = db.Column(db.Integer, nullable=False,primary_key=True)
+    code = db.Column(db.String(20), nullable=True)
+    roomtype = db.Column(db.String(20), nullable=True)
+    excess_number = db.Column(db.Integer,nullable=True)
