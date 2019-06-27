@@ -458,3 +458,45 @@ def customer_select():
 @main.route('/customer_history')
 def customer_history_views1():
     return render_template("lishi.html")
+
+
+# 客户管理 在住客人业务处理逻辑
+@main.route('/customer_select')
+def customer_select():
+    name = request.args['user']
+    card = request.args['card']
+    phone = request.args['phone']
+    list = []
+    # print(name,card,phone)
+    if name == "" and card == "" and phone == "":
+        info = db.session.query(User_information, Order_room).filter(
+            Order_room.customerName == User_information.customerName).filter(
+            db.cast(Order_room.beginDate, db.Date) == db.cast(datetime.datetime.now(), db.Date)).all()
+        print(info)
+        for i in info:
+            print(i)
+            for o in i:
+                # print(i.to_dict())
+                list.append(o.to_dict())
+        print(json.dumps(list))
+        return json.dumps(list)
+
+    if name and card and phone:
+        # info = User_information.query.filter_by(customerName=name).filter_by(idcard=card).filter_by(phone=phone).all()
+        info = db.session.query(User_information, Order_room).filter(
+            User_information.customerName == Order_room.customerName).filter(
+            User_information.customerName == name).filter(User_information.idcard == card).filter(
+            User_information.phone == phone).filter(
+            db.cast(Order_room.beginDate, db.Date) == db.cast(datetime.datetime.now(), db.Date)).first()
+        print(info)
+    # print(info)
+    # print(info.to_dict())
+    for i in info:
+        print(i)
+        # print(i.to_dict())
+        list.append(i.to_dict())
+    # info_dict = info.to_dict()
+    # print(info_dict, type(info_dict))
+    # print(json.dumps(list))
+    print(list)
+    return json.dumps(list)
