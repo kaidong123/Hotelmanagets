@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柏林酒店</title>
+    <link rel="shortcut icon" href="../static/images/img/4.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../static/css/zhuye.css" type="text/css">
+    <script src="../static/js/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            $("a").on("click", function () {
+                $(this).siblings().css("border", "0").css("color", "#999");
+                $(this).css("border-bottom", "1.7px solid darkorchid").css("color", "darkorchid")
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="top">
+    <div class="logo">
+        <img src="../static/images/img/4.png" style="width: 102px">
+        <p>柏林酒店</p>
+    </div>
+    <div class="daohang" id="nav">
+        <a href="/system_set" class="dh" target="iframe">
+            <img src="../static/images/img/2.png" style="width: 50px; height: 50px">
+            <p>系统设置</p>
+        </a>
+        <a href="/operation_manager" class="dh" target="iframe">
+            <img src="../static/images/img/7.png" style="width: 50px; height: 50px">
+            <p>操作管理</p>
+        </a>
+        <a href="/customer_in" class="dh" target="iframe">
+            <img src="../static/images/img/1.png" style="width: 50px;height: 50px">
+            <p>入住管理</p>
+        </a>
+        <a href="../jiudian/3.html" class="dh" target="iframe">
+            <img src="../static/images/img/5.png" style="width: 50px; height: 50px">
+            <p>客户管理</p>
+        </a>
+        <a href="/Customers_booking" class="dh" target="iframe">
+            <img src="../static/images/img/3.png" style="width: 50px; height: 50px">
+            <p>客户预订</p>
+        </a>
+        <a href="/room_center" class="dh" target="iframe">
+            <img src="../static/images/img/6.png" style="width: 50px; height: 50px">
+            <p>房态中心</p>
+        </a>
+    </div>
+</div>
+<iframe name="iframe" src="" width="1864.9" height="655"></iframe>
+<div id="foot">
+    {% if not params.user %}
+    {% else %}
+    <a id="login"><span>欢迎：{{params.user.username}}登录</span></a>
+    <a href="/logout" id="register">退出</a>
+    {% endif %}
+    <img src="../static/images/img/wzq.jpg" id="foot1">
+    <img src="../static/images/img/4.png" id="foot2">
+    <div id="foot4">©2019AID1902 版权所有 京ICP证xxxxxxxxxxx</div>
+    <div id="foot3">完美无缺</div>
+</div>
+
+</body>
+</html>

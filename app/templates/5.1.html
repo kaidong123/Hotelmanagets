@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/5.1.css" type="text/css">
+</head>
+<body>
+    <div id="box">
+        <div id="top">
+            <a href="/operation_manager" class="top1" target="_self">修改密码</a>
+            <a href="/operation_manager1" class="top2" target="_self">日志浏览</a>
+        </div>
+        <div id="main">
+            <div class="main1">
+                <form action="" method="" enctype="">
+                    <p>日志浏览</p>
+                    <div>
+                        <span>操作员：</span>
+                        <input type="text" name="uname">
+                        <span>开始时间：</span>
+                        <input type="date" name="startime">
+                        <span>结束时间：</span>
+                        <input type="date" name="endtime" id="moren">
+                        <span style="display: inline-block">
+                            行为：
+                            <select name="action" style="background: #2B2B2B;color: #BD9C67">
+                                <option value="all" selected>全部</option>
+                                <option value="changeroom">改变房态</option>
+                                <option value="addlive">新增入住</option>
+                                <option value="addcustom">添加客人</option>
+                                <option value="pay">结账</option>
+                            </select>
+                        </span>
+                        <input type="submit" value="搜索日志" style="margin-left: 20px" id="search">
+                    </div>
+                </form>
+                <table cellspacing="0px">
+                    <tr>
+                        <td>时间</td>
+                        <td>操作员</td>
+                        <td>行为</td>
+                        <td>详细</td>
+                        <td>结果</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var now = new Date();
+        //格式化日，如果小于9，前面补0
+        var day = ("0" + now.getDate()).slice(-2);
+        //格式化月，如果小于9，前面补0
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        //拼装完整日期格式
+        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+        document.getElementById("moren").value=(today);
+    </script>
+</body>
+</html>

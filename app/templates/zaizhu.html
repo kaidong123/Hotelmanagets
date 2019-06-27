@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在住客人</title>
+    <link rel="stylesheet" href="../static/css/zaizhu.css" type="text/css">
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            $("#search_select").click(function () {
+                $.ajax({
+                    url: "/customer_select",
+                    type: 'get',
+                    async: true,
+                    dataType: 'json',
+                    data: {
+                        user: $("#user").val(),
+                        card: $("#card").val(),
+                        phone: $("#phone").val(),
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        // var html = "";
+                        // for (var i = 1; i <= data.length; i++) {
+                        //     html += "<tr>";
+                        //     html += "<td>" + data[i].uname + "</td>";
+                        //     html += "<td>" + data[i].uname + "</td>";
+                        //     html += "<td>" + data[i].upwd + "</td>";
+                        //     html += "<td>" + data[i].uemail + "</td>";
+                        //     html += "</tr>";
+                        // }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<!--1.顶部-->
+<div id="top">
+    <span>在住客人</span>
+    <a href="/customer_history">历史客人</a>
+</div>
+<!--2.中间部分-->
+<div id="main">
+    <!--2.1 中间顶部-->
+    <div id="main-top">
+        <span>在住客人账户查询</span>
+    </div>
+    <!--2.2 中间底部-->
+    <form>
+        <tr>
+            <td class="td1" id="txt">
+                姓&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="uname" id="user">
+                证件号：<input type='text' name='numberID' id="card">
+                手机号：<input type="tel" name="utel" id="phone">
+                <button type="submit" id="search_select">搜索</button>
+            </td>
+        </tr>
+    </form>
+</div>
+<!--3.下面部分-->
+<div id="bottom">
+    <!--3.1 下面顶部-->
+    <div id="bottom-top">
+        <span>账户列表</span>
+    </div>
+    <!--3.2 下面底部-->
+    <div id="bottom-bottom">
+        <table class="table1" id="center">
+            <tr class="tr1">
+                <th>序号</th>
+                <th>姓名</th>
+                <th>籍贯</th>
+                <th>证件类型</th>
+                <th>证件号</th>
+                <th>地址</th>
+                <th>手机号码</th>
+                <th>起止时间</th>
+            </tr>
+            <!--<tr class="tr3">-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td>共计number条</td>-->
+            <!--</tr>-->
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/*body*/
+body{
+    width: 450px;
+    color: #BD9C67;
+    border-top: 0.1px solid #BD9C67;
+    font-size: 14px;
+    background: black;
+    margin-left: 8px;
+}
+/*顶部*/
+body>p{
+    margin: 10px 0 0 0;
+    color: #ff0000;
+}
+/*内容填充*/
+#date_in .left{
+    float: left;
+    margin: 0 0 10px 0;
+}
+#date_in .left input{
+    width: 143px;
+    color: #BD9C67;
+    border: 1.0px solid #BD9C67;
+    background: black;
+}
+#date_in .left select{
+    width: 148px;
+    color: #BD9C67;
+    border: 1.0px solid #BD9C67;
+    background: black;
+}
+/*功能栏*/
+#btn_right>button{
+    color: black;
+    float: right;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background: #BD9C67;
+    border: 1.0px solid #BD9C67;
+    border-radius: 5px;
+}
+#btn_right>button:hover{
+    background: #5193D4;
+    color: #FFFFFF;
+}
+#btn_right>button:focus{
+    color: white;
+    border: 2.0px solid #BD9C67;
+    padding-top: 5.0px;
+    border-bottom:none;
+    overflow: hidden;
+}
+
+/*表格信息栏*/
+#date_table{
+    clear: both;
+}
+#date_table>table{
+    height: auto;
+    border-collapse: collapse;
+}
+#date_table table tr{
+    height: 30px;
+    line-height: 30px;
+}
+#date_table table tr .th1{
+    width:200px;
+    border: 0.1px solid #BD9C67;
+    background: #404040;
+}
+#date_table table tr .th2,.th3{
+    width:130px;
+    border: 0.1px solid #BD9C67;
+    background: #404040;
+}
+

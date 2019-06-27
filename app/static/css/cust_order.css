@@ -1,0 +1,276 @@
+/*1页面顶部*/
+#top{
+    height: 30px;
+    background: #66C9F3;
+}
+#top span{
+    color: #BD9C67;
+    font-size: 20px;
+    line-height: 30px;
+    margin-left: 10px;
+}
+/*2.步入信息栏*/
+#d2{
+    margin: 10px 5px;
+    border: 0.1px solid #BD9C67;
+    padding:2px;
+}
+/*2-1*/
+#d2-1{
+    position: relative;
+    top:-10px;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,1);
+}
+#d2-1 p{
+    float: left;
+    font-size: 12px;
+    margin: 0 3px;
+    background: rgba(0,0,0,1);
+    padding:0 3px;
+}
+/*d2-2*/
+.left{
+    float: left;
+    padding-bottom: 5px;
+}
+#d2-2 span{
+    display: inline-block;
+    width:60px;
+    text-align: left;
+    margin-left: 6px;
+}
+#d2-2 input{
+    width:140px;
+    color:  #BD9C67;
+    height: 20px;
+}
+#d2-2 select{
+    width: 140px;
+    color: #BD9C67;
+    height: 20px;
+}
+#d2-2 .star{
+    color: red;
+}
+#d2-2 .s_r{
+    margin-left: 11.17px;
+}
+#d2-2 .line3{
+    clear: both;
+}
+#d2-2 .line3 input{
+    width: 993px;
+    margin-bottom: 10px;
+}
+/*3.导航栏*/
+#nav{
+    background: #404040;
+}
+#nav a{
+    font-size: 15px;
+    line-height: 30px;
+    border: 0.1px solid #BD9C67;
+    float: left;
+    text-align: center;
+}
+#nav a>div{
+    color: black;
+    background: #BD9C67;
+    width:55px;
+    height:30px;
+    padding-left: 5px;
+    border-left: 0.1px solid black;
+}
+#nav a>div:hover{
+    color: #FFFFFF;
+    background: #5193D4;
+}
+#nav a:focus{
+    color: #205D7A;
+    border: 2.0px solid #BD9C67;
+    border-top: 5.0px solid #BD9C67;
+    border-bottom:none;
+    overflow: hidden;
+}
+/*4.主体*/
+/*4.1主体顶部*/
+.maintop_left{
+    float: left;
+    margin-right: 10px;
+    color: #ff0000;
+}
+#main_top>.span{
+    width:50px;
+    height: 20px;
+    float: left;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/*4.2主体底部左侧上客单*/
+#main_bottom{
+    width: 1097px;
+    height: 400px;
+    margin-top: 10px;
+}
+#left{
+    float: left;
+}
+#up_left{
+    width: 500px;
+    height: 170px;
+    margin-left: 5px;
+    border: 0.1px solid #BD9C67;
+}
+#up_left>p{
+    font: bold 16px "微软雅黑";
+    font-size: 15px;
+    top: -10px;
+    position: relative;
+    margin-left:5px;
+    width: 30px;
+    background: rgba(0,0,0,1);
+    padding:0 3px;
+}
+#up_left table tr td{
+    text-align: left;
+    font: bold 16px "微软雅黑";
+    width: 100px;
+    height: 40px;
+    border: 0.1px solid #BD9C67;
+    border-right: none;
+    border-collapse: collapse;
+    background: #404040;
+    padding-left: 5px;
+}
+/*4.2主体底部左侧下房价信息单*/
+#down_left{
+    width: 500px;
+    height: 170px;
+    margin: 10px 0 0 5px;
+    border: 0.1px solid #BD9C67;
+}
+#down_left>p{
+    font: bold 16px "微软雅黑";
+    font-size: 15px;
+    top: -10px;
+    position: relative;
+    margin-left:5px;
+    width: 60px;
+    background: rgba(0,0,0,1);
+    padding:0 3px;
+}
+#down_left .price td{
+    /*font: bold 16px "微软雅黑"*/
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+#down_left table tr td{
+    line-height: 20px;
+    text-align: center;
+    width: 100px;
+    border: 0.1px solid #BD9C67;
+    border-bottom: none;
+    border-right: none;
+    border-collapse: collapse;
+    background: #404040;
+}
+#date_now{
+    color: #BD9C67;
+    background: #404040;
+    text-align: center;
+}
+/*4.2左下房价信息单左右点击切换日期按钮*/
+#down_left .price .left{
+    left: 5px;
+}
+#down_left .price .right{
+    right: 5px;
+    background-image:url("../images/arrow-right.png");
+}
+/*4.3主体右侧-房型复选栏*/
+#right{
+    width: 580px;
+    height: 400px;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    top: -20px;
+}
+#up_right p{
+    float: left;
+}
+#right>div>p{
+    margin-bottom: 5px;
+    color: #ff0000;
+    text-align: center;
+}
+#up_right>input{
+    width: 20px;
+    height: 12px;
+    margin: 0 0 0 5px;
+    border-radius: 50%;
+}
+/*4.3主体右侧信息填充栏*/
+#down_right{
+    width: 580px;
+}
+#down_right select,input{
+    width: 169.19px;
+}
+#down_right .a_width{
+    width: 50.8px;
+}
+#datestart{
+    width: 169.19px;
+}
+#datenow{
+    width: 169.19px;
+}
+#down_right .b_width{
+    width: 108.19px;
+}
+#down_right .margin0{
+    width: 13px;
+    margin: 0;
+    vertical-align: bottom;
+}
+#down_right .c_width{
+    width: 44.4px;
+}
+#down_right .right_left .d_width{
+    width: 466px;
+}
+#down_right .secret{
+    width: 13px;
+}
+/*5.功能提交栏*/
+#func{
+    float: right;
+    margin-right: 10px;
+}
+#func .click{
+    color: black;
+    float: left;
+    border: 0.1px solid #BD9C67;
+    background: #BD9C67;
+    padding: 5px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#func .click:hover{
+    background: #5193D4;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+

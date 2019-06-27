@@ -1,0 +1,103 @@
+/*顶部*/
+body{
+    color: #BD9C67;
+    background: #040000;
+    width: 1350px;
+}
+body>p{
+    width: 1350px;
+    background: #7BB5E3;
+    color: #BD9C67;
+    padding-left: 10px;
+}
+/*main主体部分*/
+#main{
+    margin: 5px;
+    height: 655px;
+    border: 0.1px solid #BD9C67;
+}
+/*左侧部分*/
+#main_left{
+    float: left;
+    margin: 30px 5px 10px 10px;
+}
+/*左侧顶部导航栏*/
+#main_left a{
+    color: black;
+    float: left;
+    border: 0.1px solid black;
+    background: #BD9C67;
+    cursor: pointer;
+    padding: 3px 5px;
+    text-decoration: none;
+}
+#main_left a:hover{
+    background: #5193D4;
+    color: #FFFFFF;
+}
+#main_left a:focus{
+    color: white;
+    border: 2.0px solid #BD9C67;
+    padding-top: 5.0px;
+    border-bottom:none;
+    overflow: hidden;
+}
+/*右侧部分*/
+/*上部选框*/
+#main_right .right_up{
+    margin: 20px 0;
+}
+#main_right .right_up select{
+    width: 200px;
+    height: 30px;
+    background: #2B2B2B;
+    border: 1.0px solid #BD9C67;
+}
+#main_right .right_up button{
+    height: 30px;
+    background: #BD9C67;
+    color: black;
+    border: 1.0px solid #BD9C67;
+}
+/*下部信息列表输出*/
+#main_right .right_down>p{
+    color: red;
+    margin: 0;
+}
+#r_table{
+    margin-right: 10px;
+}
+#r_table tr{
+    height: 30px;
+    line-height: 30px;
+}
+#r_table tr .th1{
+    width:100px;
+    border: 0.1px solid #BD9C67;
+    background: #404040;
+}
+#r_table tr .th2{
+    width:150px;
+    border: 0.1px solid #BD9C67;
+    background: #404040;
+}
+#r_table tr .th3,.th4,.th5{
+    width:130px;
+    border: 0.1px solid #BD9C67;
+    background: #404040;
+}
+#r_table tr .th5{
+    width:300px;
+    border: 0.1px solid #BD9C67;
+    background: #404040;
+}
+#r_table tr .th3>select,.th5>input{
+    background: black;
+    border: 1.0px solid #BD9C67;
+}
+#r_talbe{
+    border-collapse: collapse;
+}
+#r_table tr th select,input{
+    color: #BD9C67;
+}

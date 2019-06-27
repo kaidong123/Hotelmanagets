@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史客人</title>
+    <link rel="stylesheet" href="../static/css/lishi.css" type="text/css">
+</head>
+<body>
+    <!--1.顶部-->
+    <div id="top">
+        <a href="/customer_in">在住客人</a>
+        <span id="title">历史客人</span>
+    </div>
+    <!--2.中间部分-->
+    <div id="main">
+        <!--2.1 中间顶部-->
+        <div id="main-top">
+            <span>历史客人账户查询</span>
+        </div>
+        <!--2.2 中间底部-->
+        <form action="" method="get" enctype="">
+        <table id="tt1">
+            <tr id="tr">
+                <td class="tt1"><span class="sp1">姓名：</span></td>
+                <td class="tt2"><input type="text" name="uname"></td>
+                <td class="tt1"><span class="sp1">证件号：</span></td>
+                <td class="tt2"><input type='text' name='numberID'></td>
+                <td class="tt1"><span class="sp1">手机号：</span></td>
+                <td class="tt2"><input type="tel" name="utel"></td>
+                <!--给房间类型 input 加入下拉框，默认全部：全部、商务双人间、双人间、单人间、钟点房、商务房-->
+                <td class="tt1"><span class="sp1">房间类型：</span><select name="" class="fx">
+                    <option value>全部</option>
+                    <option value="商务双人间">商务双人间</option>
+                    <option value="双人间">双人间</option>
+                    <option value="单人间">单人间</option>
+                    <option value="钟点房">钟点房</option>
+                    <option value="商务房">商务房</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="tt1"><span class="sp1">房间号：</span></td>
+                <td class="tt2"><input type="text" name="room-num"></td>
+                <td class="tt1"><span class="sp1">开始日期：</span></td>
+                <td class="tt2"><input type="date" name="start-data" id="datenow"></td>
+                <td class="tt1"><span class="sp1">结束日期：</span></td>
+                <td class="tt2"><input type="date" name="end-data" id="datenow1"></td>
+                <td class="tt1"><button type="submit" onblur="show()">搜索</button></td>
+            </tr>
+        </table>
+
+        </form>
+    </div>
+    <!--3.下面部分-->
+    <div id="bottom">
+        <!--3.1 下面顶部-->
+        <div id="bottom-top">
+            <span>账户列表</span>
+        </div>
+        <!--3.2 下面底部-->
+        <div id="bottom-bottom">
+            <table class="table1">
+                 <tr class="tr1">
+                     <th>类型</th>
+                     <th>姓名</th>
+                     <th>籍贯</th>
+                     <th>证件类型</th>
+                     <th>证件号</th>
+                     <th>地址</th>
+                     <th>手机号码</th>
+                     <th>序号</th>
+                 </tr>
+                <tr class="tr2">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    // var now = new Date();
+    // //格式化日，如果小于9，前面补0
+    // var day = ("0" + now.getDate()).slice(-2);
+    // //格式化月，如果小于9，前面补0
+    // var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    // //拼装完整日期格式
+    // var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+    // document.getElementById("datenow").value=(today);
+    // document.getElementById("datenow1").value=(today);
+</script>
+<script type="text/javascript">
+    // JS实现选项卡切换
+    // window.onload = function () {
+    //     var myTab = document.getElementById("tab");    //整个div
+    //     var myUl = myTab.getElementsByTagName("ul")[0];//一个节点
+    //     var myLi = myUl.getElementsByTagName("li");    //数组
+    //     var myDiv = myTab.getElementsByTagName("div"); //数组
+    //
+    //     for (var i = 0; i < myLi.length; i++) {
+    //         myLi[i].index = i;
+    //         myLi[i].onclick = function () {
+    //             for (var j = 0; j < myLi.length; j++) {
+    //                 myLi[j].className = "off";
+    //                 myDiv[j].className = "hide";
+    //             }
+    //             this.className = "on";
+    //             myDiv[this.index].className = "show";
+    //         }
+    //     }
+    // }
+</script>
+</html>

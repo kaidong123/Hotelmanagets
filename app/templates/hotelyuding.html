@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速预定</title>
+    <script src="../static/js/jquery-1.11.3.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        input {
+            outline: none;
+
+        }
+
+        .zt { /*整体样式设置栏*/
+            width: 1097px;
+            /* height: 655px; */
+            /*left: 300px;*/
+            margin: 0 auto;
+            color: #BD9C67;
+            background-color: #040000;
+            /* text-align:center; */
+            /* line-height: 655px; */
+        }
+
+        .d1 { /*第一块*/
+            margin-top: 30px;
+            padding-top: 20px;
+            padding-left: 15px;
+            font-size: 13px;
+            margin-bottom: 40px;
+        }
+
+        #s1 { /*渠道: 下拉菜单*/
+            width: 130px;
+            height: 23px;
+            line-height: 23px;
+            margin-right: 15px;
+            box-sizing: content-box;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #in1 { /*会员卡卡号输入框*/
+            width: 130px;
+            height: 23px;
+            line-height: 23px;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #in2 { /*会员卡卡号: 查找按钮*/
+            background-color: #B09C67;
+            color: black;
+            margin-right: 15px;
+            border: 0;
+            width: 46px;
+            height: 26px;
+            padding: 0 auto;
+            outline: none;
+        }
+
+        #in3 { /*协议单位: 输入框*/
+            width: 130px;
+            height: 23px;
+            line-height: 23px;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #in4 { /*协议单位: 查找按钮*/
+            background-color: #B09C67;
+            color: black;
+            border: 0;
+            width: 46px;
+            height: 26px;
+            padding: 0 auto;
+            outline: none;
+        }
+
+        .d2 { /*预订单信息*/
+            margin-left: 15px;
+            border-bottom: 1px solid #B09C67;
+            line-height: 40px;
+            margin: 10px 15px;
+            margin-bottom: 30px;
+        }
+
+        .d3 { /*预订人信息里的三个小块样式*/
+            font-weight: normal;
+            margin-left: 5px;
+            margin-bottom: 40px;
+        }
+
+        .bt { /*订单信息下标题类型,勿动*/
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: right;
+            /*margin-left: 50px;*/
+        }
+
+        .fx { /*下拉菜单: 房间类型*/
+            margin-left: 5px;
+            width: 80px;
+            height: 22px;
+            /*margin-right:63px;*/
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;;
+        }
+
+        .fs { /*下拉菜单: 房间数量*/
+            margin-left: 5px;
+            width: 147px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 12px;
+            /*margin-right:63px;*/
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #fh { /*预留房间输入框*/
+            margin-left: 5px;
+            width: 100px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 12px;
+            padding: 0 auto;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #ys { /*预定时间输入框*/
+            margin-left: 5px;
+            width: 161px;
+            height: 22px;
+            /*margin-right:8px;*/
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #ds { /*抵店时间输入框*/
+            margin-left: 5px;
+            width: 161px;
+            height: 22px;
+            margin-right: 45px;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #ls { /* 离店时间输入框 */
+            margin-left: 5px;
+            width: 160px;
+            height: 22px;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        .d3 .yr { /*预订人输入框*/
+            margin-left: 5px;
+            margin-right: 37px;
+            width: 135px;
+            height: 22px;
+            line-height: 22px;
+            /*border:1px solid #A0A0A0;*/
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        .guara { /*担保下拉菜单*/
+            margin-left: 5px;
+            width: 147px;
+            height: 22px;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        #yuc1 { /*预留手机号输入框*/
+            margin-right: 74px;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+        }
+
+        .beizhu { /*备注输入框*/
+
+            margin-left: 5px;
+            width: 862px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 15px;
+            overflow: auto;
+            background-color: #2B2B2B;
+            color: #BD9C67;
+            border: 0.1px solid #B09C67;
+            vertical-align: middle;
+
+        }
+
+        #bz { /*标题: 备注*/
+
+            display: inline-block;
+        }
+
+        .checknam { /*姓名手机号输入框那一块*/
+            padding-left: 38px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        #usname, #upwd { /*姓名输入框*/
+            margin-left: 5px;
+            width: 135px;
+            height: 22px;
+            line-height: 22px;
+            padding: 0 5px;
+            color: #BD9C67;
+            /*margin-right:54px;*/
+            background-color: #2B2B2B;
+            border: 0.1px solid #B09C67;
+        }
+
+        .yda { /*预定块*/
+            width: 982px;
+            height: 40px;
+            text-align: center;
+        }
+
+        .yda #yd2 { /*预订按钮*/
+            width: 54px;
+            height: 30px;
+            background-color: #B09C67;
+            color: black;
+            padding: 0 auto;
+            font-size: 14px;
+            display: inline-block;
+            outline: none;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        a {
+            font-size: 32px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .notnull {
+            color: red;
+        }
+
+        .d3 #setleft {
+            margin-left: 82px;
+        }
+
+        .d3 #setleft2 {
+            margin-left: 45px;
+        }
+
+        #setleft3 {
+            margin-left: 70px;
+        }
+    </style>
+    <script>
+        // $('#yd2').click(function () {
+        //     console.log(1);
+        //     $.ajax({
+        //         url:"/business_process",
+        //         type:"get",
+        //         async: true,
+        //         data:{
+        //             room_type:$(".fx").val()
+        //         },
+        //         success:function (data) {
+        //             console.log(data)
+        //         },
+        //     });
+        // });
+        function checkroom() {
+            select_val = $('.fx').val();
+            console.log(select_val);
+            if (select_val) {
+                return true
+            } else {
+                alert("房间类型不能为空");
+                return false
+            }
+        }
+
+        function checknumber() {
+            select_number = $('.fs').val();
+            console.log(select_number);
+            if (select_number) {
+                return true
+            } else {
+                alert("房间数量不能为空");
+                return false
+            }
+        }
+
+        function checkname() {
+            is_name = $('#usname').val();
+            console.log(is_name);
+            if (is_name) {
+                return true
+            } else {
+                alert("姓名不能为空");
+                return false
+            }
+        }
+
+        function checkphone() {
+            is_phone = $('#upwd').val();
+            if (is_phone) {
+                return true
+            } else {
+                alert("手机号码不能为空");
+                return false
+            }
+        }
+
+        function checktime() {
+            is_time = $('#ys').val();
+            if (is_time) {
+                return true
+            } else {
+                alert("预订时间不能为空");
+                return false
+            }
+        }
+
+
+        function check() {
+            if (checkroom() && checknumber() && checktime() && checkname() && checkphone()) {
+                return true
+            } else {
+                // alert("带星号必填项");
+                return false
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="zt">
+    <!-- <div>
+        <a href="">快速预定</a>
+        <a href="">随意定</a>
+    </div> -->
+    <form method="post" action="/business_process" enctype="multipart/form-data" onsubmit="return check()">
+        <div class='d1'>
+            渠道:
+            <select name="channel" id='s1'>
+                <option>上门</option>
+                <option>电话</option>
+                <option>微信</option>
+            </select>
+            会员卡卡号:
+            <input name="card_number" type='text' id='in1'>
+            <input type='button' value='查找' id='in2'>
+            协议单位:
+            <input type='text' id='in3'>
+            <input type='button' value='查找' id='in4'>
+        </div>
+        <div>
+            <div class='d2'>
+                <b>预定单信息</b>
+            </div>
+            <div class='d3'>
+                <span class='bt'>房间类型:</span>
+                <select name="rotype" class='fx'>
+                    <option value='商务房'>商务房</option>
+                    <option value='钟点房'>钟点房</option>
+                    <!--<option value='多人间'>多人间</option>-->
+                    <option value='双人间'>双人间</option>
+                    <option value='单人间'>单人间</option>
+                    <option value='商务双人间'>商务双人间</option>
+                    <!--<option value='商务多人间'>商务多人间</option>-->
+                </select>
+                <span class="notnull">*</span>
+                <span class='bt' id="setleft">&nbsp;房间数量:</span>
+                <select class='fs' name="roomnumber">
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                </select>
+                <span class="notnull">*</span>
+                <span class='bt' id="setleft2">预留房间:</span>
+                <input name='rnum' type='text' id='fh'>
+                <br>
+                <span class='bt'>&nbsp;&nbsp;预定时间:</span>
+                <input name="showDate" type="date" id='ys'>
+                <span class="notnull">*</span>
+                <span class='bt'>&nbsp;&nbsp;抵店时间:</span>
+                <input name="beginDate" type='date' id='ds'>
+                <span class='bt'>&nbsp;&nbsp;离店时间:</span>
+                <input name="endDate" type='date' id='ls'>
+            </div>
+            <div class='d3'>
+                <span class='bt'>预订人:</span>
+                <input name='yuname' type='text' class='yr' id="yr1">
+                <span class="bt">预留手机:</span>
+                <input name="yucall" type="text" class="yr" id="yuc1">
+                <span class="bt">担保:</span>
+                <select name="guarantee" class="guara">
+                    <option value="无担保">无担保</option>
+                    <option value="担保到达">担保到达</option>
+                    <option value="全程担保">全程担保</option>
+                </select>
+            </div>
+            <div class="d3">
+                <span class="bt" id="bz">备注:</span>
+                <textarea name="comment" class="beizhu"></textarea>
+            </div>
+        </div>
+        <div>
+            <div class="d2">
+                <b>入住人信息</b>
+            </div>
+            <div class="checknam">
+                姓名:
+                <input name="username" type="text" placeholder="新客人" id="usname">
+                <span class="notnull">*</span>
+                <span id="setleft3">手机号码:</span>
+                <input name="phonnumbe" type="text" id="upwd">
+                <span class="notnull">*</span>
+            </div>
+            <div class="yda">
+                <input type="submit" value="预定" id="yd2">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
+
+

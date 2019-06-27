@@ -1,0 +1,72 @@
+/**清除默认样式，设置基础样式**/
+body{
+    margin: 0;
+    padding: 0;
+    color: black;
+    list-style: none;    /*去除列表项目符号*/
+}
+#box{
+    width: 1097px;
+    margin: 0 auto;
+    /*border:1px solid red;*/
+     margin-bottom: 20px;
+}
+a{
+    color: #999;
+    text-decoration: none;    /**去超链接下划线**/
+}
+input{
+    outline: none;    /**去输入框轮廓线**/
+    background: #2B2B2B;
+    color: #BD9C67;
+    border: 0.1px solid #BD9C67;
+    padding-left: 5px;
+}
+/*顶部top*/
+#top{
+    margin-bottom: 50px;
+}
+#top .top2{
+    margin-left: 50px;
+    padding-bottom: 3px;
+    color: darkorchid;
+    border-bottom: 1.7px solid darkorchid;
+}
+
+
+/*主题main*/
+#main{
+    border: 1.7px solid #BD9C67;
+    font-size: 15px;
+    background: #040000;
+}
+#main .main1 form p{
+    border-bottom: 1.7px solid #BD9C67;
+    padding-bottom: 10px;
+    font-size: 15px;
+    padding-left: 50px;
+    color: #BD9C67;
+}
+#main .main1 form div{
+    text-align: center;
+    color: #BD9C67;
+}
+#search{
+    background: #BD9C67;
+    color: black;
+}
+tr td{
+    width: 200px;
+    height: 50px;
+    border-bottom: 1px solid #BD9C67;
+    border-right: 1px solid #BD9C67;
+    border-collapse: collapse;
+}
+
+.main1 table{
+    text-align: center;
+    border: 1px solid #BD9C67;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    color: #BD9C67;
+}

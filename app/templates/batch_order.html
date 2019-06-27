@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>batch_order.html</title>
+    <link rel="stylesheet" href="../static/css/batch_order.css" type="text/css">
+    <script src="../static/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../static/js/layer.js" ></script>
+    <script type="text/javascript" src="../static/js/jquery.js" ></script>
+</head>
+<body>
+    <!--顶部-->
+    <p>批量入住：</p>
+    <!--main主体部分-->
+    <div id="main">
+        <!--左侧部分-->
+        <div id="main_left">
+            <!--左侧顶部导航栏-->
+            <a href="batch_qselect.html" target="iframe">
+                <div class="click" id="btn">快速选房</div>
+            </a>
+            <a href="batch_bselect.html" target="iframe">
+                <div class="click" id="btn1">批量选房</div>
+            </a><br>
+            <!--左侧主要内容区域-->
+            <iframe name="iframe" width="500px" height="600px" frameborder="none"></iframe>
+        </div>
+        <!--右侧部分-->
+        <div id="main_right">
+            <!--上部选框-->
+            <div class="right_up">
+                <span>准备入住房间：</span>
+                <select>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+                <button>确定入住</button>
+                <button>关闭</button>
+            </div>
+            <!--下部信息列表输出-->
+            <div class="right_down">
+                <p>双击删除房间</p>
+                <table cellspacing="0" id="r_table">
+                    <tr>
+                        <th class="th1">房号</th>
+                        <th class="th2">房型</th>
+                        <th class="th3">人数</th>
+                        <th class="th4">协议单位</th>
+                        <th class="th5">离店时间</th>
+                    </tr>
+                    <tr>
+                        <th class="th1" style="background: black"></th>
+                        <th class="th2" style="background: black"></th>
+                        <th class="th3" style="background: black">
+                            <select style="width: 65px;">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </th>
+                        <th class="th4" style="background: black"></th>
+                        <th class="th5" style="background: black">
+                            <input type="date" name="dateend">
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/**清除默认样式，设置基础样式**/
+body{
+    margin: 0;
+    padding: 0;
+    color: #040000;
+    list-style: none;    /*去除列表项目符号*/
+}
+#box{
+    width: 1097px;
+    margin: 0 auto;
+    /*border:1px solid red;*/
+    margin-bottom: 20px;
+}
+a{
+    color: #999;
+    text-decoration: none;    /**去超链接下划线**/
+}
+input{
+    outline: none;    /**去输入框轮廓线**/
+    background: #2B2B2B;
+    color: #BD9C67;
+    border: 0.1px solid #BD9C67;
+    padding-left: 5px;
+}
+/*顶部top*/
+#top{
+    margin-bottom: 50px;
+}
+#top .top2{
+    padding-bottom: 3px;
+    color: darkorchid;
+    border-bottom: 1.7px solid darkorchid;
+}
+ .top2,.top3,.top4{
+    margin-left: 50px;
+}
+
+
+/*主题main*/
+#main{
+    border: 1.7px solid #BD9C67;
+    font-size: 15px;
+    background: #040000;
+}
+#main .main1 .biaotou{
+    border-bottom: 1.7px solid #BD9C67;
+}
+#main .main1 .biaotou p{
+    border-bottom: 1.7px solid #BD9C67;
+    padding-bottom: 10px;
+    font-size: 15px;
+    padding-left: 50px;
+    color: #BD9C67;
+}
+#main .main1 .biaotou div{
+    padding-left: 50px;
+    color: #BD9C67;
+}
+#search{
+    background: #BD9C67;
+    color: black;
+}
+
+.a-floor{
+    margin-right: 10px;
+}
+
+tr td{
+    width: 200px;
+    height: 50px;
+    border-collapse: collapse;
+}
+.td3{
+    width: 400px;
+}
+
+#table1{
+    text-align: center;
+    margin: auto auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #BD9C67;
+}
+#table2{
+    margin: 0;
+    padding-left: 50px;
+}
+#table2 tr td{
+    width: 120px;
+}
+.delete,.update{
+    color: #BD9C67;
+}
+#r td>.delete{
+    color: #999;
+}
+form div{
+    margin-top: 15px;
+    padding-left: 50px;
+    color: #BD9C67;
+}
+#floor{
+    color: black;
+    text-align: center;
+    padding: 0 25px;
+    margin-right: 50px;
+    background: #BD9C67;
+
+}
+.c1{
+    width: 300px;
+    text-align: center;
+}
+.c2{
+    width: 40px;
+    text-align: center;
+}
+
+.c3{
+    width: 80px;
+    text-align: center;
+}
+
+#add{
+    padding-left: 10px;
+    color: #BD9C67;
+}
+#add-room{
+    color: black;
+}

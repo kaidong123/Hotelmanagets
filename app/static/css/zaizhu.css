@@ -1,0 +1,145 @@
+td1/*清除浏览器的默认样式*/
+body{
+    margin: 0;
+}
+/* 基础样式 */
+body{
+    width:1097px;
+    height:655px;
+    color: #BD9C67;
+    margin:0 auto;
+}
+/*1.顶部*/
+#top span{
+    font-size: 25px;
+    color: darkorchid;
+    background: #040000;
+    cursor: pointer;
+    list-style: none;
+    height: 29px;
+    line-height: 29px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid darkorchid;
+}
+#top a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #999;
+    background: #040000;
+        cursor: pointer;
+        list-style: none;
+        height: 29px;
+        line-height: 29px;
+        margin-left: 50px;
+
+}
+#top{
+    border:0;
+    background: rgba(0,0,0,.01);
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+/*2.中间部分*/
+#main{
+    width: 1095px;
+    height:150px;
+    border: 1px solid #BD9C67;
+    margin-top: 0;
+    position: relative;
+    background: #040000;
+}
+/*2.1 中间顶部*/
+#main-top span{
+    width: 1075px;
+    position: absolute;
+    border-bottom: 2px solid #BD9C67;
+    left: 10px;
+    top:16px;
+    bottom: 90px;
+    font-size: 22px;
+}
+/*2.2 中间底部*/
+form{
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    color:#BD9C67;
+}
+form input{
+    border: 0.1px solid #BD9C67;
+    background: #2B2B2B;
+    color:#BD9C67;
+    /*margin-right: 10px;*/
+}
+form button{
+    background: #BD9C67;
+    border: 1px solid #BD9C67;
+    color: black;
+}
+
+/*3.下面部分*/
+#bottom{
+    margin-top: 10px;
+    position: relative;
+    border: 1px solid #BD9C67;
+    background: #040000;
+}
+
+/*3.1 下面顶部*/
+#bottom-top{
+    height: 55px;
+    border-bottom: 2px solid #BD9C67;
+    width: 1075px;
+    margin: 0 auto;
+}
+#bottom-top span{
+    width: 1075px;
+    margin: 0 auto;
+    position: absolute;
+
+    left: 10px;
+    top:16px;
+    bottom: 360px;
+    font-size: 23px;
+}
+/*3.2 下面底部*/
+#bottom-bottom{
+    padding:20px 10px 10px;
+}
+.table1{    /* 表格*/
+    border:1px solid #BD9C67;
+    width: 100%;
+    border-collapse: collapse;
+}
+.tr1 th{
+    background: #040000;
+    height: 30px;
+    border: 1px solid #BD9C67;
+    color: #BD9C67;
+}
+.tr2 td{
+    height: 30px;
+    text-align: center;
+    border: 1px solid #BD9C67;
+}
+.tr3 td{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

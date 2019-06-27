@@ -1,0 +1,138 @@
+/*清除默认设置*/
+body,p{
+    margin: 0;
+}
+body{
+    text-align: center;
+    color: #999;
+    font-size: 25px;
+    background: black;
+}
+a{
+    width: 58px;
+    height: 75px;
+    color: #999;
+    text-decoration: none;
+}
+input:focus {
+    outline: none;
+}
+/*顶部*/
+#top{
+    width: 1864.9px;
+    height: 102px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-bottom: 1.7px solid darkorchid;
+    background: black;
+
+}
+.daohang .dh{
+    float: right;
+    margin-left: 50px;
+    font-size: 15px;
+}
+
+.logo{
+    float: left;
+    margin-top: 30px;
+}
+
+.logo p{
+    display: inline-block;
+    margin-left:30px ;
+    /*color: #AA7912;*/
+    color: #ffc200;
+}
+.logo img{
+    margin-left: 34px;
+}
+.daohang{
+    float: right;
+    margin-top: 17px;
+    margin-right: 34px;
+}
+.daohang .dh p{
+    width: 60px;
+    margin-left: -3px;
+}
+
+/*主题*/
+iframe{
+    margin: 0 auto;
+    border: 0;
+    background-image: url("../images/img/23.jpg");
+    background-size: 1864.9px 660px;
+    background-repeat: no-repeat;
+
+}
+/*尾部*/
+#foot{
+    margin: 0 auto;
+    width: 1864.9px;
+    height: 145px;
+    background: black;
+    position: relative;
+}
+#foot1{
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    top: 10px;
+
+}
+#foot #login{
+    position: absolute;
+    right: 70px;
+    bottom: 6px;
+    /*color: #AA7912;*/
+    color: #ffc200;
+    font-size: 14px;
+    width: 200px;
+    height: 19px;
+    text-align: left;
+}
+#foot #register{
+    position: absolute;
+    right: 5px;
+    height: 19px;
+    width: 28px;
+    bottom: 6px;
+    /*color: #AA7912;*/
+    color: #ffc200;
+    font-size: 14px;
+    font-weight: bolder;
+}
+#foot2{
+position: absolute;
+    width: 80px;
+    right: 380px;
+    bottom: 6px;
+}
+#foot4{
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -148px;
+}
+#foot3{
+    position: absolute;
+    right: 330px;
+    bottom: 6px;
+    /*color: #AA7912;*/
+    color: #ffc200;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+

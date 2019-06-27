@@ -1,0 +1,50 @@
+/*body*/
+body{
+    margin: 0;
+    width: 380px;
+    height: 260px;
+}
+/*顶部*/
+body>p{
+    margin: 0;
+    padding-left: 10px;
+    width: 370px;
+    height: 30px;
+    line-height: 30px;
+    background:#7BB5E3;
+    color: #FCFDFE;
+}
+/*主体*/
+#main{
+    width: 350px;
+    margin: 10px 10px 20px 10px;
+    height: 180px;
+    border: 0.1px solid gray;
+    background: #F7F7F7;
+}
+/*第一层*/
+#main .main_top{
+    margin: 30px 40px 30px 20px;
+}
+#main .main_top >input{
+    width: 200px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 5px;
+}
+#main .main_top>a{
+    text-decoration:underline;
+    color: #006699;
+}
+/*第二层*/
+#main .main_foot{
+    float: right;
+    margin: 20px 20px 20px 0;
+}
+.main_foot button{
+    display: inline-block;
+    border:none;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    border-radius: 5px;
+}

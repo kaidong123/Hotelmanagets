@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>batch_qselect</title>
+    <link rel="stylesheet" href="../static/css/batch_qselect.css" type="text/css">
+</head>
+<body>
+    <!--顶部-->
+    <p>注：双击选择入住房间</p>
+    <!--信息录入栏-->
+    <div id="date_in">
+        <p class="left">
+            <span>抵店日期：</span>
+            <input type="date" name="datestart">
+             <span>离店日期：</span>
+            <input type="date" name="dateend">
+        </p>
+        <p class="left">
+            <span>价格方案：</span>
+            <input type="text" placeholder="门市价" readonly>
+             <span>协议单位：</span>
+            <input type="text">
+        </p>
+        <p class="left">
+            <span>会员卡号：</span>
+            <input type="text">
+             <span>每房人数：</span>
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </p>
+    </div>
+    <!--表格信息栏-->
+    <div id="date_table">
+        <table cellspacing="0">
+            <tr>
+                <th class="th1">房号</th>
+                <th class="th2">房型</th>
+                <th class="th3">房价</th>
+            </tr>
+            <tr>
+                <th class="th1" style="background: black;"></th>
+                <th class="th2" style="background: black;"></th>
+                <th class="th3" style="background: black;"></th>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+/*消除浏览器的默认样式*/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*基础样式*/
+a{
+    text-decoration: none;
+}
+input:focus{
+    outline: none;
+}
+body{
+    font: 12px youyuan,Arial;
+    color: #BD9C67;
+    background: #040000;
+    padding-top: 10px;
+}
+/*外部容器样式*/
+#box{
+    width: 1097px;
+    height: 680px;
+    margin: 0 auto;
+    border: 1.0px solid gray;
+    padding: 10px;
+    background: #040000;
+}
+select,input{
+
+    color: #BD9C67;
+    background: #2B2B2B;
+    border: 0.1px solid #BD9C67;
+}
+.star{
+    color: red;
+}

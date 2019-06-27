@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/6.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
+
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.bigcolorpicker.css"/>
+    <script type="text/javascript" src="../static/js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.bigcolorpicker.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#c1").bigColorpicker("c1");
+            $("#c2").bigColorpicker("c2");
+            $("#c3").bigColorpicker("c3");
+            $("#c4").bigColorpicker("c4");
+            $("#c5").bigColorpicker("c5");
+            $("#c6").bigColorpicker("c6");
+            //监听输入框状态
+            value = ''
+            $("td input").blur(function () {
+                value = $(this).val();
+                // console.log(value)
+                $(this).parent().prev().find("div").css("background", value);
+                // console.log($(this).prev().children())
+            })
+            //保存颜色
+            $(".keep").click(function () {
+                value = $(this).parent().prev().prev().children().attr("value")
+                console.log(value)
+                $.ajax({
+                    url: "/save_color",
+                    type: "get",
+                    data: {
+                        room_status: $(this).parent().prev().html(),
+                        room_color: value
+                    },
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        alert(data + "颜色修改成功！")
+                    }
+
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="box">
+    <div id="top">
+        <a href="" class="top1" target="_self">房态类型</a>
+        <a href="/system_set1" class="top2" target="_self">楼层管理</a>
+        <a href="/system_set2" class="top3" target="_self">房间类型</a>
+        <a href="/system_set3" class="top4" target="_self">价格设置</a>
+    </div>
+    <div id="main">
+        <div class="main1">
+            <form action="" method="" enctype="">
+                <p>房态类型</p>
+            </form>
+            <table cellspacing="0px">
+                <tr>
+                    <td>
+                        <div style="background: {{params.colors[2].room_color}}"></div>
+                    </td>
+                    <td><input type="text" id="c1" value="{{params.colors[2].room_color}}"></td>
+                    <td>干净房（空）</td>
+                    <td><a href="#" class="keep">保存</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background: {{params.colors[1].room_color}}"></div>
+                    </td>
+                    <td><input type="text" id="c2" value="{{params.colors[1].room_color}}"></td>
+                    <td>在住房</td>
+                    <td><a href="#" class="keep">保存</a></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background: {{params.colors[4].room_color}}"></div>
+                    </td>
+                    <td><input type="text" id="c3" value="{{params.colors[4].room_color}}"></td>
+                    <td>脏房（空）</td>
+                    <td><a href="#" class="keep">保存</a></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background: {{params.colors[3].room_color}}"></div>
+                    </td>
+                    <td><input type="text" id="c4" value="{{params.colors[3].room_color}}"></td>
+                    <td>维修房</td>
+                    <td><a href="#" class="keep">保存</a></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background: {{params.colors[0].room_color}}"></div>
+                    </td>
+                    <td><input type="text" id="c5" value="{{params.colors[0].room_color}}"></td>
+                    <td>停用房</td>
+                    <td><a href="#" class="keep">保存</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background: {{params.colors[5].room_color}}"></div>
+                    </td>
+                    <td><input type="text" id="c6" value="{{params.colors[5].room_color}}"></td>
+                    <td>清洁未检查</td>
+                    <td><a href="#" class="keep">保存</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

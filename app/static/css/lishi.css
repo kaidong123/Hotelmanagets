@@ -1,0 +1,142 @@
+/*清除浏览器的默认样式*/
+body{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* 基础样式 */
+body{
+    width:1097px;
+    height:400px;
+    color: #BD9C67;
+    margin:0 auto;
+}
+/*1.顶部*/
+#top #title{
+    font-size: 25px;
+    color: darkorchid;
+    /*color: #BD9C67;*/
+    background: #040000;
+    cursor: pointer;
+    list-style: none;
+    height: 29px;
+    line-height: 29px;
+    padding-bottom: 2px;
+    margin-left: 50px;
+    border-bottom: 2px solid darkorchid;
+
+}
+#top a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #999;
+    background: #040000;
+    cursor: pointer;
+    list-style: none;
+    height: 29px;
+    line-height: 29px;
+}
+#top{
+    border:0;
+    background: rgba(0,0,0,.01);
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+/*2.中间部分*/
+#main{
+    width: 1095px;
+    height:180px;
+    border: 1px solid #BD9C67;
+    margin-top: 0;
+    position: relative;
+    background: #040000;
+}
+/*2.1 中间顶部*/
+#main-top span{
+    width: 1075px;
+    position: absolute;
+    border-bottom: 2px solid #BD9C67;
+    left: 10px;
+    top:16px;
+    bottom: 120px;
+    font-size: 22px;
+}
+/*2.2 中间底部*/
+form{
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+form button{
+    background: #BD9C67;
+    border: 1px solid #BD9C67;
+    color: black;
+}
+form input{
+    background: #2B2B2B;
+    border: 0.1px solid #BD9C67;
+    color: #BD9C67;
+}
+form .fx{
+    /*给房间类型 input 加入下拉框，默认全部：全部、商务双人间、双人间、单人间、钟点房、商务房*/
+    width: 160px;
+    background: #2B2B2B;
+    border: 0.1px solid #BD9C67;
+    color:#BD9C67;
+}
+/*3.下面部分*/
+#bottom{
+    margin-top: 10px;
+    height:180px;
+    position: relative;
+    border: 1px solid #BD9C67;
+    background: #040000;
+}
+/*3.1 下面顶部*/
+#bottom-top span{
+    width: 1075px;
+    margin: 0 auto;
+    position: absolute;
+    border-bottom: 2px solid #BD9C67;
+    left: 10px;
+    top:16px;
+    bottom:120px;
+    font-size: 23px;
+}
+/*3.2 下面底部*/
+#bottom-bottom{
+    padding: 85px 10px;
+}
+.table1{
+    border:1px solid #BD9C67;
+    width: 100%;
+    border-collapse: collapse;
+}
+.tr1{
+    border: 1px solid #BD9C67;
+}
+.tr1 th{
+    height: 30px;
+    border: 1px solid #BD9C67;
+    color: #BD9C67;
+}
+.tr2 td{
+    height: 30px;
+    text-align: center;
+    border: 1px solid #BD9C67;
+    color: #BD9C67;
+}
+#tr{
+    margin-bottom: 10px;
+    height: 50px;
+}
+#tt1 .tt2{
+    padding-right: 15px;
+}
+#tt1{
+    text-align: left;
+}
+
+

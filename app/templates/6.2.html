@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/6.2.css" type="text/css">
+    <script src="../static/js/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            $("#add").click(function () {
+                var tr = $("<tr></tr>")
+                tr.html("<td><input type=\"text\" class=\"c1\"></td><td><input type=\"text\" class=\"c2\"></td><td><input type=\"text\" class=\"c3\"></td><td><a href=\"javascript:void(0)\" class=update>保存</a>&nbsp;<a href=\"javascript:void(0)\" class=delete>删除</a></td>")
+                $("table").append(tr)
+                var td1 = $("#d1").val()
+                // console.log(td1)
+                $("table tr:last td:eq(0)>input").attr("value",td1)
+                var td2 = $("#d2").val()
+                // console.log(td2)
+                $("table tr:last td:eq(1)>input").attr("value",td2)
+                var td3 = $("#d3").val()
+                // console.log(td3)
+                $("table tr:last td:eq(2)>input").attr("value",td3)
+                return false
+            })
+            //为js动态添加的元素添加点击事件  table是原本存在的，静态的，否则事件触发失败，.delete是jq动态添加的
+            $("table").on('click','.delete',function () {
+                $(this).parents("tr").remove()
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="top">
+            <a href="/system_set" class="top1" target="_self">房态类型</a>
+            <a href="/system_set1" class="top2" target="_self">楼层管理</a>
+            <a href="/system_set2" class="top3" target="_self">房间类型</a>
+            <a href="/system_set3" class="top4" target="_self">价格设置</a>
+        </div>
+        <div id="main">
+            <div class="main1">
+                <form action="" method="" enctype="">
+                    <p>房间类型</p>
+                    <div>
+                        <span>代码：</span>
+                        <input type="text" name="num-room" id="d1">
+                        <span>名称：</span>
+                        <input type="text" name="name-room" id="d2">
+                        <span>超额数：</span>
+                        <input type="text" name="count" id="d3">
+                        <input type="submit" value="添加" style="margin-left: 20px" id="add">
+                    </div>
+                </form>
+                <table cellspacing="0px">
+                    <tr>
+                        <td>代码</td>
+                        <td>名称</td>
+                        <td>超额数</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="c1" value="1005"></td>
+                        <td><input type="text" class="c2" value="商务双人间"></td>
+                        <td><input type="text" class="c3" value="200"></td>
+                        <td>
+                            <a href="javascript:void(0)" class="update">保存</a>
+                            <a href="javascript:void(0)" class="delete">删除</a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="c1" value="1004"></td>
+                        <td><input type="text" class="c2" value="双人间"></td>
+                        <td><input type="text" class="c3" value="200"></td>
+                        <td>
+                            <a href="javascript:void(0)" class="update">保存</a>
+                            <a href="javascript:void(0)" class="delete">删除</a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="c1" value="1003"></td>
+                        <td><input type="text" class="c2" value="单人间"></td>
+                        <td><input type="text" class="c3" value="200"></td>
+                        <td>
+                            <a href="javascript:void(0)" class="update">保存</a>
+                            <a href="javascript:void(0)" class="delete">删除</a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="c1" value="1002"></td>
+                        <td><input type="text" class="c2" value="钟点房"></td>
+                        <td><input type="text" class="c3" value="200"></td>
+                        <td>
+                            <a href="javascript:void(0)" class="update">保存</a>
+                            <a href="javascript:void(0)" class="delete">删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="c1" value="1001"></td>
+                        <td><input type="text" class="c2" value="商务房"></td>
+                        <td><input type="text" class="c3" value="200"></td>
+                        <td>
+                            <a href="javascript:void(0)" class="update">保存</a>
+                            <a href="javascript:void(0)" class="delete">删除</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

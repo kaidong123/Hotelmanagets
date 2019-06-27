@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>酒店管理系统</title>
+    <link rel="shortcut icon" href="../static/images/logo3.jpg" type="image/x-icon" />
+    <script src="../static/js/xtparam.js" type="text/javascript" charset="UTF-8"></script>
+    <style>
+        *{
+            margin: 0;
+            font-size:20px;
+            /*color: white;*/
+            padding: 0;
+            list-style:none;
+            text-decoration: none;
+        }
+        input:focus{
+            outline: none;
+        }
+        #top,#bottom{
+            width: 1000px;
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+        }
+        #top{
+            height: 90px;
+        }
+        #top img{
+            width: 110px;
+            height: 80px;
+            margin: 5px 20px 30px 0px;
+            border-radius: 10px;
+            float: left;
+        }
+        .title1{
+            color: gray;
+            font-family: youyuan;
+            font-weight: normal;
+            font-size: 36px;
+            float: left;
+            /*border: 2px solid blue;*/
+            color: #FFC200;
+            margin-top: 40px;
+            /*box-shadow: 10px 10px 20px 10px green;*/
+        }
+        #main {
+            width: 1870px;
+            height: 750px;
+            /*background-size: 1921px 590px;*/
+            margin: 0px auto;
+            /*background-image: url("./Web素材/images/regist.jpg");*/
+            position: relative;
+            /*border: 1px solid red;*/
+        }
+        #flash {
+            /*根据图片的大小来设置外层div的大小*/
+            width: 1870px;
+            height: 750px;
+            margin: 0 auto;
+            position: relative;
+            /*设置div定位，方便之后图片及圆点位置的设定*/
+            border: 1px solid black;
+			}
+
+        #flash img {
+            width: 1870px;
+            height: 750px;
+            margin: 0 auto;
+            position: absolute;
+            /*设置所有图片重叠*/
+            left: 0px;
+            top: 0px;
+            display: none;
+            /*设置所有图片隐藏，通过改变第一个图片的行间样式来使第一个图片显示*/
+        }
+
+        #flash ul {
+            width: 150px;
+            height: 25px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            left: 50%;
+            margin-left: -150px;
+            bottom: 10%;
+        }
+
+        #flash ul li {
+            width: 12px;
+            height: 12px;
+            margin-top: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin-left: 15px;
+            float: left;
+        }
+
+        #flash ul .li_1 {
+            background-color: #f40;
+            /*设置第一个圆点背景色为红色*/
+        }
+
+        #flash .span-r {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            right: 2%;
+            top: 45%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #flash .span-r span {
+            width: 100%;
+            height: 100%;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: xx-large;
+            font-weight: 700;
+            line-height: 47px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        #flash .span-l {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: 2%;
+            top: 45%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #flash .span-l span {
+            width: 100%;
+            height: 100%;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: xx-large;
+            font-weight: 700;
+            line-height: 47px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        #size{
+            width: 280px;
+            height: 400px;
+            background: rgba(0,0,0,0.2);
+            float: right;
+            position: absolute;
+            top: 190px;
+            left: 1500px;
+        }
+        #box{
+            width: 250px;
+            height: 350px;
+            /*border: 1px solid red;*/
+            margin: 20px auto 30px;
+        }
+        p{
+            color: white;
+        }
+        .title2{
+            /*width: 250px;*/
+            /*height: 35px;*/
+            /*margin: 0 auto;*/
+            /*border: 1px solid transparent;*/
+            /*border-bottom: 1px solid white;*/
+            display: inline-block;
+
+        }
+        .title3 {
+            float: right;
+            /*font-size: px;*/
+            /*margin-top: 0px;*/
+            margin-right: 15px;
+        }
+        a:link { color:white; }
+        a:visited { color:white; }
+        .uinput{
+            width: 220px;
+            height: 30px;
+            padding-left: 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            position: relative;
+            border: 0px;
+        }
+        .c1,.c2{
+            position: absolute;
+            right: 25px;
+            margin-top: 6px;
+            margin-right: 5px;
+        }
+        .top_margin{
+            margin-top: 30px;
+
+        }
+        .code {
+				font-family: Arial;
+				font-style: italic;
+				color: blue;
+				font-size: 30px;
+				border: 0;
+				padding: 2px 3px;
+				letter-spacing: 3px;
+				font-weight: bolder;
+				float: left;
+				cursor: pointer;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				vertical-align: middle;
+				background-image: url("../static/images/timg.jpg");
+                background-size: 100px 30px;
+			}
+        .c3{
+            width: 100px;
+            height: 30px;
+            margin: auto 0px auto 10px;
+            font-size: 15px;
+            padding-left: 20px;
+            border-radius: 5px;
+            border: 0px;
+
+        }
+        .button-z{
+            color: white;
+            font-size: 15px;
+        }
+        .title4{
+            float: right;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        .button{
+            width: 250px;
+            height: 40px;
+            margin-top: 20px;
+            font-size: 15px;
+            background: #997679;
+            color: white;
+            border: 0px;
+        }
+        #bottom{
+            height: 200px;
+            /*position: relative;*/
+        }
+        .title6{
+            width: 700px;
+            height: 150px;
+            /*border: 1px solid red;*/
+            float: left;
+            margin-top: 20px;
+        }
+        #right-layout{
+            width: 300px;
+            height: 200px;
+            /*border: 1px solid red;*/
+            /*left: 500px;*/
+            position: absolute;
+            /*float: right;*/
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: 20px;
+
+        }
+        .title5{
+            color: black;
+            font-size: 15px;
+        }
+        #right-layout .img-a{
+            margin-top: 5px;
+            float: left;
+            position: relative;
+
+        }
+        #right-layout .img-b{
+            /*margin-top: 5px;*/
+            float: right;
+            position: absolute;
+            margin-left: 10px;
+
+
+        }
+        #right-layout .img-c{
+            /*float: left;*/
+            margin-top: 2px;
+        }
+        .title7{
+            /*width: 120px;*/
+            /*border: 1px solid red;*/
+            position: relative;
+            display: inline-block;
+        }
+        #bottom .title6 .tables{
+            color: #999;
+            font-size: 10px;
+        }
+        /*.random_picture{*/
+            /*width: 50px;*/
+            /*height: 50px;*/
+            /*border: 1px solid red;*/
+            /*float: left;*/
+            /*display: inline-block;*/
+        /*}*/
+        .border{
+            border-top: 1px solid gray;
+        }
+        .msg{
+            margin-top: 5px;
+            color: red ;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <img src="../static/images/logo3.jpg">
+        <p class="title1">欢迎登录柏林酒店系统</p>
+    </div>
+    <div id="main">
+        <div id="flash">
+            <img src="../static/images/21.jpg" style="display: block" alt="">
+            <img src="../static/images/2.jpg" alt="">
+            <img src="../static/images/4.jpeg" alt="">
+            <img src="../static/images/3.jpg" alt="">
+            <img src="../static/images/1.jpeg" alt="">
+            <ul>
+                <li class="li_1"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="span-r" id="left_span">
+			    <span>></span>
+            </div>
+		    <div class="span-l" id="right_span">
+			    <span><</span>
+		    </div>
+        </div>
+
+        <div id="size">
+            <div id="box">
+                <div>
+                    <p class="title2">登录</p>
+                    <p class="title3"><a href="/register">新用户注册</a></p>
+                    <hr>
+                </div>
+                <form action="/login" method="post">
+                    <p class="msg">
+                        {% if errMsg %}
+                            用户名和密码错误
+                        {% endif %}
+                    </p>
+                    <div class="top_margin">
+                        <input class="uinput" type="text" id="uname" name="username" onfocus="hidden_msg()" placeholder="请输入您的用户名">
+                        <img class="c1" style="width: 20px;height: 20px" src="../static/images/user.png">
+                    </div>
+                    <div class="top_margin">
+                        <input class="uinput" type="password" id="upasswd" name="password" placeholder="请输入您的密码">
+                        <img class="c2" style="width: 20px;height: 20px" src="../static/images/password.png" >
+                    </div>
+                    <div class="top_margin">
+
+                        <div id="checkCode" class="code" onclick="createCode(4)"></div>
+
+                        <input id = "inputCode" class="c3" type="text" placeholder="请输入验证码" onblur="securitycode()">
+                    </div>
+                    <div class="top_margin">
+                        <input type="checkbox" name="isSaved"><label class="button-z"> 自动登录</label>
+                        <p class="title4">忘记密码?</p>
+                    </div>
+                    <div>
+                        <input class="button" type="submit" value="登录">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="title6">
+            <table class="tables">
+                <tr>
+                    <td>关于我们</td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td class="border">团队成员：郑咏琪 康西川 薛含雨 王志强 韩宇 陈宏光 栗明辉</td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>&copy 柏林 移动开放平台 | 服务协议 | 权利声明 | 版本声明 | 帮助中心 | 版本投诉</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="right-layout">
+            <div class="title7">
+                <p class="title5">酒店系统客户端</p>
+                <img class="img-c" src="../static/images/ios.png"><br>
+                <img class="img-a" src="../static/images/android.png">
+            </div>
+            <img  class="img-b" style="width: 100px;height: 100px" src="../static/images/erweima.png">
+        </div>
+    </div>
+</body>
+<script src="../static/js/index.js" type="text/javascript" charset="UTF-8"></script>
+</html>
