@@ -27,7 +27,7 @@
                     <tr class="line1">
                         <td class="left">
                             <span>名称:</span>
-                            <input type="text"><label class="star">*</label>
+                            <input type="text" id="name"><label class="star">*</label>
                         </td>
                         <td class="left">
                             <span>预定卡号:</span>
@@ -39,9 +39,9 @@
                         </td>
                         <td class="left">
                             <span>是否团体:</span>
-                                <select>
-                                    <option>否</option>
-                                    <option>是</option>
+                                <select id="treamroom">
+                                    <option value="0">否</option>
+                                    <option value="1">是</option>
                                 </select>
                         </td>
                         <td class="left">
@@ -56,7 +56,7 @@
                         </td>
                         <td class="left">
                             <span class="s_r">担保类型:</span>
-                                <select>
+                                <select readonly="readonly">
                                     <option>无担保</option>
                                     <option>有担保</option>
                                 </select>
@@ -74,12 +74,12 @@
                         </td>
                         <td class="left">
                             <span>保留时效:</span>
-                             <input type="date" name="dateto" style="height: 20px">
+                             <input type="text" name="dateto" id="dateto" style="height: 20px">
                         </td>
 
                         <td class="left">
                             <span>下订时间:</span>
-                            <input type="text">
+                            <input type="text" name="order_time" id="order_time">
                         </td>
                     </tr>
                     <tr class="line3">
@@ -93,7 +93,7 @@
         </div>
         <!--3.导航栏-->
         <div id="nav" style="width: 1097px;height: 30px;">
-            <a href="../html/cust_order.html">
+            <a href="">
                 <div>客单</div>
             </a>
             <a href="">
@@ -104,349 +104,411 @@
         <div id="main" style="width: 1097px;height: 400px;">
             <!--4顶部-->
             <!--4.1顶部-->
-            <div id="main_top" style="height:20px;">
-                <div class="maintop_left">
-                    <span style="margin-left: 50px;">预定:</span>
-                    <span class="span1" style="margin-left: 5px;">间</span>
-                </div>
-                <div class="maintop_left">
-                    <span>在住:</span>
-                    <span class="span2" style="margin-left: 5px;">间</span>
-                </div>
-                <div class="maintop_left">
-                    <span>离店:</span>
-                    <span class="span3" style="margin-left: 5px;">间</span>
-                </div>
-            </div>
-            <!--4.2底部-->
-            <div id="main_bottom">
-                <!--4.2左侧-->
-                <div id="left">
-                    <!--4.2上客单表-->
-                    <div id="up_left">
-                        <p>客单</p>
-                        <table cellspacing="0">
-                            <tr class="order">
-                                <td>房类</td>
-                                <td>房号</td>
-                                <td>状态</td>
-                                <td>姓名</td>
-                                <td style="border: 1.0px solid #BD9C67">数量</td>
-                            </tr>
-                            <!--<tr>-->
-                                <!--<td></td>-->
-                                <!--<td></td>-->
-                                <!--<td></td>-->
-                                <!--<td></td>-->
-                                <!--<td></td>-->
-                            <!--</tr>-->
-                        </table>
+            <form>
+                <div id="main_top" style="height:20px;">
+                    <div class="maintop_left">
+                        <span style="margin-left: 50px;">预定:</span>
+                        <span class="span1" style="margin-left: 5px;">间</span>
                     </div>
-                    <!--4.2下房价信息表-->
-                    <div id="down_left">
-                        <p>房价信息</p>
-                        <table cellspacing="0">
-                            <tr class="price">
-                                <td>房号</td>
-                                <td>
-                                    <a class="left"></a>
-                                    <p>05-19</p>
-                                    昨天
-                                </td>
-                                <td>
-                                    <input type="date" name="time_now" id="date_now">
-                                    今天
-                                </td>
-                                <td>
-                                    <p>05-19</p>
-                                    明天
-                                </td>
-                                <td  style="border: 1.0px solid #BD9C67">
-                                    <p>05-19</p>
-                                    后天
-                                     <a class="right"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </table>
+                    <div class="maintop_left">
+                        <span>在住:</span>
+                        <span class="span2" style="margin-left: 5px;">间</span>
+                    </div>
+                    <div class="maintop_left">
+                        <span>离店:</span>
+                        <span class="span3" style="margin-left: 5px;">间</span>
                     </div>
                 </div>
-                <!--4.2右侧-->
-                <div id="right">
-                    <!--4.2上部房型复选栏-->
-                    <div>
-                        <p>新增入住</p>
-                        <div id="up_right">
-                            <span>入住类型：</span>
-                            <input onclick="" type="radio" name="room">普通房
-                            <input onclick="" type="radio" name="room">钟点房
-                            <input onclick="" type="radio" name="room">特殊房
-                            <input onclick="" type="radio" name="room">自用房
-                            <input onclick="" type="radio" name="room">免费房
-                            <input onclick="" type="radio" name="room">公寓房
+                <!--4.2底部-->
+                <div id="main_bottom">
+                    <!--4.2左侧-->
+                    <div id="left">
+                        <!--4.2上客单表-->
+                        <div id="up_left">
+                            <p>客单</p>
+                            <table cellspacing="0">
+                                <tr class="order">
+                                    <td>房类</td>
+                                    <td>房号</td>
+                                    <td>状态</td>
+                                    <td>姓名</td>
+                                    <td style="border: 1.0px solid #BD9C67">数量</td>
+                                </tr>
+                                <!--<tr>-->
+                                    <!--<td></td>-->
+                                    <!--<td></td>-->
+                                    <!--<td></td>-->
+                                    <!--<td></td>-->
+                                    <!--<td></td>-->
+                                <!--</tr>-->
+                            </table>
+                        </div>
+                        <!--4.2下房价信息表-->
+                        <div id="down_left">
+                            <p>房价信息</p>
+                            <table cellspacing="0">
+                                <tr class="price">
+                                    <td>房号</td>
+                                    <td>
+                                        <a class="left"></a>
+                                        <input style="width: 110px;text-align: center;border: none;background-color: #404040;"
+                                               type="text" name="yesertday" id="date_-1">
+                                        昨天
+                                    </td>
+                                    <td>
+                                        <input style="width: 110px;text-align: center;border: none;background-color: #404040;"
+                                               type="text" name="time_now" id="date_now">
+                                        今天
+                                    </td>
+                                    <td>
+                                        <input style="width: 110px;text-align: center;border: none;background-color: #404040;"
+                                               type="text" name="tomorrow" id="date_1">
+                                        明天
+                                    </td>
+                                    <td  style="border: 1.0px solid #BD9C67">
+                                        <input style="width: 110px;text-align: center;border: none;background-color: #404040;"
+                                               type="text" name="after_tomorrow" id="date_2">
+                                        后天
+                                         <a class="right"></a>
+                                    </td>
+                                </tr>
+                                <tr class="price">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                    <!--4.2下部信息填充栏-->
-                    <!--<div>-->
-                    <table id="down_right">
-                        <tr class="right_left">
-                            <td>
-                                <span>客源渠道：</span>
-                                <select>
-                                    <option>门店</option>
-                                    <option>预定中心（CRS）</option>
-                                    <option>网站</option>
-                                    <option>APP</option>
-                                    <option>飞猪</option>
-                                    <option>微信</option>
-                                    <option>自助入住</option>
-                                    <option>携程</option>
-                                    <option>艺龙</option>
-                                    <option>美团</option>
-                                    <option>住哲代销</option>
-                                </select>
-                            </td>
-                            <td class="margin_left">
-                                <span>价格方案：</span>
-                                <select>
-                                    <option>门市价</option>
-                                    <option>会员价</option>
-                                    <option>协议价</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>房间类型：</span>
-                                <select>
-                                    <option checked>商务双人间</option>
-                                    <option>商务单人间</option>
-                                    <option>温馨大床房</option>
-                                </select>
-                                <label class="star">*</label>
-                            </td>
-                            <td class="margin_left">
-                                <span>协议单位：</span>
-                                <input type="text">
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>房间号码：</span>
-                                <input type="text" class="a_width">
-                                <span>入住天数：</span>
-                                <input type="number" class="a_width">
-                            </td>
-                            <td class="margin_left">
-                                <span>会员卡号：</span>
-                                <input placeholder="普通客人">
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>抵店日期：</span>
-                                <input type="date" name="start_time"
-                                       id="datestart">
-                                <label class="star">*</label>
-                            </td>
-                            <td class="margin_left">
-                                <span>客人名称：</span>
-                                <input placeholder="新客人">
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>离店日期：</span>
-                                <input type="date" name="start_time"
-                                       id="datenow">
-                                <label class="star">*</label>
-                            </td>
-                            <td class="margin_left">
-                                <span>客人性别：</span>
-                                <select>
-                                    <option checked>男</option>
-                                    <option>女</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>房间数量：</span>
-                                <input placeholder="1">
-                            </td>
-                            <td class="margin_left">
-                                <span>证件类型：</span>
-                                <select>
-                                    <option checked>二代身份证</option>
-                                    <option>驾驶证</option>
-                                    <option>护照</option>
-                                    <option>军官证</option>
-                                    <option>士兵证</option>
-                                    <option>港澳通行证</option>
-                                    <option>户口簿</option>
-                                    <option>临时身份证</option>
-                                    <option>其他</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span >当日房价：</span>
-                                <input class="b_width">
-                                <label class="star">*</label>
-                                <span>房价保密</span>
-                                <input type="checkbox" class="margin0">
-                            </td>
-                            <td class="margin_left">
-                                <span>证件号码：</span>
-                                <input>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>餐券数量：</span>
-                                早<select class="c_width">
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>中<select class="c_width">
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>晚<select class="c_width">
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </td>
-                            <td class="margin_left">
-                                <span>出生日期：</span>
-                                <input>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>车牌号码：</span>
-                                <input>
-                            </td>
-                            <td class="margin_left">
-                                <span>手机号码：</span>
-                                <input>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td colspan="2">
-                                <span>客人喜好：</span>
-                                <input class="d_width">
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>客人国籍：</span>
-                                <input placeholder="中国大陆">
-                            </td>
-                            <td class="margin_left">
-                                <span>客人籍贯：</span>
-                                <input>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td colspan="2">
-                                <span>详细地址：</span>
-                                <input type="text" class="d_width">
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td>
-                                <span>发票抬头：</span>
-                                <input>
-                            </td>
-                            <td class="margin_left">
-                                <span>是否保密：</span>
-                                <input type="radio" name="secret" class="secret">不保密</input>
-                                <input type="radio" name="secret" class="secret">保密</input>
-                            </td>
-                        </tr>
-                        <tr class="right_left">
-                            <td colspan="2">
-                                <span>备注信息：</span>
-                                <input class="d_width">
-                            </td>
-                        </tr>
-                    </table>
-                    <!--</div>-->
+                    <!--4.2右侧-->
+                    <div id="right">
+                        <!--4.2上部房型复选栏-->
+                        <div>
+                            <p>新增入住</p>
+                            <div id="up_right">
+                                <span>入住类型：</span>
+                                <input onclick="" type="radio" name="room">普通房
+                                <input onclick="" type="radio" name="room">钟点房
+                                <input onclick="" type="radio" name="room">特殊房
+                                <input onclick="" type="radio" name="room">自用房
+                                <input onclick="" type="radio" name="room">免费房
+                                <input onclick="" type="radio" name="room">公寓房
+                            </div>
+                        </div>
+                        <!--4.2下部信息填充栏-->
+                        <!--<div>-->
+                        <table id="down_right">
+                            <tr class="right_left">
+                                <td>
+                                    <span>客源渠道：</span>
+                                    <select>
+                                        <option>门店</option>
+                                        <option>预定中心（CRS）</option>
+                                        <option>网站</option>
+                                        <option>APP</option>
+                                        <option>飞猪</option>
+                                        <option>微信</option>
+                                        <option>自助入住</option>
+                                        <option>携程</option>
+                                        <option>艺龙</option>
+                                        <option>美团</option>
+                                        <option>住哲代销</option>
+                                    </select>
+                                </td>
+                                <td class="margin_left">
+                                    <span>价格方案：</span>
+                                    <select>
+                                        <option>门市价</option>
+                                        <option>会员价</option>
+                                        <option>协议价</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>房间类型：</span>
+                                    <select id="roomtype">
+                                        <option checked>商务双人间</option>
+                                        <option>单人间</option>
+                                        <option>双人房</option>
+                                        <option>商务房</option>
+                                        <option>钟点房</option>
+                                    </select>
+                                    <label class="star">*</label>
+                                </td>
+                                <td class="margin_left">
+                                    <span>协议单位：</span>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>房间号码：</span>
+                                    <input type="text" class="a_width" id="roomName">
+                                    <span>入住天数：</span>
+                                    <input type="number" class="a_width">
+                                </td>
+                                <td class="margin_left">
+                                    <span>会员卡号：</span>
+                                    <input placeholder="普通客人">
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>抵店日期：</span>
+                                    <input type="text" name="start_time"
+                                           id="datestart">
+                                    <label class="star">*</label>
+                                </td>
+                                <td class="margin_left">
+                                    <span>客人名称：</span>
+                                    <input placeholder="新客人" id="customerName">
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>离店日期：</span>
+                                    <input type="text" name="start_time"
+                                           id="dateleave">
+                                    <label class="star">*</label>
+                                </td>
+                                <td class="margin_left">
+                                    <span>客人性别：</span>
+                                    <select>
+                                        <option checked>男</option>
+                                        <option>女</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>房间数量：</span>
+                                    <input placeholder="1">
+                                </td>
+                                <td class="margin_left">
+                                    <span>证件类型：</span>
+                                    <select>
+                                        <option checked>二代身份证</option>
+                                        <option>驾驶证</option>
+                                        <option>护照</option>
+                                        <option>军官证</option>
+                                        <option>士兵证</option>
+                                        <option>港澳通行证</option>
+                                        <option>户口簿</option>
+                                        <option>临时身份证</option>
+                                        <option>其他</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span >当日房价：</span>
+                                    <input class="b_width" id="price">
+                                    <label class="star">*</label>
+                                    <span>房价保密</span>
+                                    <input type="checkbox" class="margin0">
+                                </td>
+                                <td class="margin_left">
+                                    <span>证件号码：</span>
+                                    <input>
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>餐券数量：</span>
+                                    早<select class="c_width">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>中<select class="c_width">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>晚<select class="c_width">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </td>
+                                <td class="margin_left">
+                                    <span>出生日期：</span>
+                                    <input>
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>押&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金：</span>
+                                    <input id="money">
+                                </td>
+                                <td class="margin_left">
+                                    <span>手机号码：</span>
+                                    <input>
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td colspan="2">
+                                    <span>客人喜好：</span>
+                                    <input class="d_width">
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>客人国籍：</span>
+                                    <input placeholder="中国大陆">
+                                </td>
+                                <td class="margin_left">
+                                    <span>客人籍贯：</span>
+                                    <input>
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td colspan="2">
+                                    <span>详细地址：</span>
+                                    <input type="text" class="d_width">
+                                </td>
+                            </tr>
+                            <tr class="right_left">
+                                <td>
+                                    <span>发票抬头：</span>
+                                    <input>
+                                </td>
+                                <td class="margin_left">
+                                    <span>是否保密：</span>
+                                    <input type="radio" name="secret" class="secret">不保密</input>
+                                    <input type="radio" name="secret" class="secret">保密</input>
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="margin-left: 3px">
+                            <span>备注信息：</span>
+                            <textarea style="color:#BD9C67;border:1.0px solid #BD9C67;
+                                width: 460px;background: #404040" id="comment"></textarea>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
         <!--5.功能提交栏-->
         <div id="func">
-            <div class="click" id="btn">批量入住</div>
-		    <div class="click" id="btn1">持他卡入住</div>
-		    <div class="click" id="btn2">保存入住</div>
+		    <!--<div class="click" id="btn2">批量入住</div>-->
+            <!--<div class="click" id="btn1">持他卡入住</div>-->
+		    <button type="button" class="click" id="btn">保存入住</button>
         </div>
     </div>
 
     <script>
-        // 时间框JS设置
-        var now = new Date();
-        //格式化日，如果小于9，前面补0
-        var day = ("0" + now.getDate()).slice(-2);
-        //格式化月，如果小于9，前面补0
-        var month = ("0" + (now.getMonth() + 1)).slice(-2);
-        //拼装完整日期格式
-        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-        document.getElementById("datenow").value=(today);
-        document.getElementById("date_now").value=(today);
+        $("#btn").click(function () {
+            console.log(1111);
+            $.ajax({
+                url:"/save_info",
+                type:"get",
+                async:true,
+                dataType:"json",
+                data:{
+                    customerName:$('#customerName').val(),
+                    roomName:$('#roomName').val(),
+                    roomtype:$('#roomtype').val(),
+                    treamroom:$('#treamroom').val(),
+                    beginDate:$('#datestart').val(),
+                    endDate:$('#dateleave').val(),
+                    checkDate:$('#dateleave').val(),
+                    price:$('#price').val(),
+                    money:$('#money').val(),
+                    comment:$('#comment').val(),
+                },
+                success:function (data) {
+                    console.log(data);
+                }
 
-
-        // 功能提交栏按钮JS功能实现
-        $('#btn').on('click',function(){
-            //iframe层
-            layer.open({
-              type: 2,
-              title: 'batch_order页',
-              shadeClose: true,
-              shade: 0.8,
-              area: ['1350px', '60%'],
-              content: 'batch_order.html'
-            });
+                }
+            );
+            $.alert("保存入住成功！")
         });
 
-         $('#btn1').on('click',function(){
-            //iframe层
-            layer.open({
-              type: 2,
-              title: 'other_card页',
-              shadeClose: true,
-              shade: 0.8,
-              area: ['380px', '90%'],
-              content: 'other_card.html'
-            });
-        });
+        function fillZero(v){
+            if(v<10){v='0'+v;}
+            return v;
+        }
+        function GetDateStr(AddDayCount) {
+            var dd = new Date();
+            dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
+            var y = dd.getFullYear();//获取当前年份的日期
+            var m = fillZero(dd.getMonth() + 1);//获取当前月份的日期
+            var d = fillZero(dd.getDate());//获取当前天数的日期
+            var h = fillZero(dd.getHours()); //获取当前小时数
+            var mm =fillZero(dd.getMinutes()); //获取当前分钟数
+            var s = fillZero(dd.getSeconds()); //获取当前描述
+            // if (d >= 10) {
+            return y + "-" + m + "-" + d + " " + h + ":" + mm + ":" + s;
+            //     // return y + "-" + m + "-" + d;
+            //     //if(AddDayCount == 0 ){
+            //     // return y + "-" + m + "-" + d + " " +  h + ":" + mm + ":" + s;
+            //     //}
+            //     // return y + "-" + m + "-" + d + " " + h + ":" + mm + ":" + s;
+            // } else {
+            //     //if(AddDayCount == 0 ){
+            //     // return y + "-" + m + "-" + d + " " +  h + ":" + mm + ":" + s;
+            //     //}
+            //     return y + "-" + m + "-0" + d + " " + h + ":" + mm + ":" + s;
+            // }
+        }
+        var yesterday = GetDateStr(-1);
+        $('#date_-1').val(yesterday.substring(5,10));
+        var today =  GetDateStr(0);
+        $('#date_now').val(today.substring(5,10));
+        $('#datestart').val(today);
+        $('#dateto').val(today.substring(0,10)+" 20:00:00");
+        $('#order_time').val(today);
+        var tomorrow = GetDateStr(1);
+        $('#date_1').val(tomorrow.substring(5,10));
+        $('#dateleave').val(tomorrow.substring(0,10)+" 12:00:00");
+        var aftertomorrow = GetDateStr(2);
+        $('#date_2').val(aftertomorrow.substring(5,10));
 
-         $('#btn2').on('click',function(){
-            //iframe层
-            layer.open({
-              type: 2,
-              title: 'save页',
-              shadeClose: true,
-              shade: 0.8,
-              area: ['380px', '90%'],
-              content: 'save.html'
-            });
-        })
+        // // 功能提交栏按钮JS功能实现
+        // $('#btn').on('click',function(){
+        //     //iframe层
+        //     layer.open({
+        //       type: 2,
+        //       title: 'batch_order页',
+        //       shadeClose: true,
+        //       shade: 0.8,
+        //       area: ['1350px', '650px'],
+        //       content: '../templates/batch_order.html'
+        //     });
+        // });
+        //
+        //  $('#btn1').on('click',function(){
+        //     //iframe层
+        //     layer.open({
+        //       type: 2,
+        //       title: 'other_card页',
+        //       shadeClose: true,
+        //       shade: 0.8,
+        //       area: ['380px', '100px'],
+        //       content: '../templates/other_card.html'
+        //     });
+        // });
+        //
+        //  $('#btn2').on('click',function(){
+        //     //iframe层
+        //     layer.open({
+        //       type: 2,
+        //       title: 'save页',
+        //       shadeClose: true,
+        //       shade: 0.8,
+        //       area: ['380px', '90%'],
+        //       content: '../templates/save.html'
+        //     });
+        // })
     </script>
 
 </body>
