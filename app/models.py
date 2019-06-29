@@ -131,3 +131,4 @@ class Roomtype_info(db.Model):
     code = db.Column(db.String(20), nullable=True)
     roomtype = db.Column(db.String(20), nullable=True)
     excess_number = db.Column(db.Integer, nullable=True)
+    
