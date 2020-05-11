@@ -1,0 +1,17 @@
+ File "G:\SODA2020\project\project\Hotelmanagets\Hotelmanagets-master\app\__init__.py", line 27, in create_app
+    app.register_blueprint(main_blueprint)
+  File "D:\install\Anaconda3\lib\site-packages\flask\app.py", line 97, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\install\Anaconda3\lib\site-packages\flask\app.py", line 1166, in register_blueprint
+    blueprint.register(self, options, first_registration)
+  File "D:\install\Anaconda3\lib\site-packages\flask\blueprints.py", line 256, in register
+    deferred(state)
+  File "D:\install\Anaconda3\lib\site-packages\flask\blueprints.py", line 294, in <lambda>
+    self.record(lambda s: s.add_url_rule(rule, endpoint, view_func, **options))
+  File "D:\install\Anaconda3\lib\site-packages\flask\blueprints.py", line 86, in add_url_rule
+    **options
+  File "D:\install\Anaconda3\lib\site-packages\flask\app.py", line 97, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\install\Anaconda3\lib\site-packages\flask\app.py", line 1282, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: main.customer_select
